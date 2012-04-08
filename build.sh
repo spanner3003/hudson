@@ -74,11 +74,11 @@ then
     cp -R $BOOTSTRAP/.repo $REPO_BRANCH
   fi
   cd $REPO_BRANCH
-  repo init -u http://github.com/CyanogenMod/android.git -b $REPO_BRANCH
+  repo init -u http://github.com/sgt7/android.git -b $REPO_BRANCH
 else
   cd $REPO_BRANCH
   # temp hack for turl
-  repo init -u http://github.com/CyanogenMod/android.git -b $REPO_BRANCH
+  repo init -u http://github.com/sgt7/android.git -b $REPO_BRANCH
 fi
 
 # make sure ccache is in PATH
@@ -92,7 +92,7 @@ fi
 cp $WORKSPACE/hudson/$REPO_BRANCH.xml .repo/local_manifest.xml
 
 echo Syncing...
-repo sync -d > /dev/null 2> /dev/null
+repo sync -j4 -d
 check_result repo sync failed.
 echo Sync complete.
 
