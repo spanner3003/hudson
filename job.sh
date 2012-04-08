@@ -5,7 +5,7 @@ export WORKSPACE=$PWD
 
 if [ ! -d hudson ]
 then
-  git clone git://github.com/CyanogenMod/hudson.git
+  git clone git://github.com/spanner3003/hudson.git
 fi
 
 cd hudson
