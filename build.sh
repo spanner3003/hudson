@@ -32,11 +32,11 @@ then
   exit 1
 fi
 
-#if [ -z "$RELEASE_TYPE" ]
-#then
-#  echo RELEASE_TYPE not specified
-#  exit 1
-#fi
+# if [ -z "$RELEASE_TYPE" ]
+# then
+#   echo RELEASE_TYPE not specified
+#   exit 1
+# fi
 
 # colorization fix in Jenkins
 export CL_PFX="\"\033[34m\""
@@ -89,7 +89,7 @@ then
   . ~/.jenkins_profile
 fi
 
-#cp $WORKSPACE/hudson/$REPO_BRANCH.xml .repo/local_manifest.xml
+# cp $WORKSPACE/hudson/$REPO_BRANCH.xml .repo/local_manifest.xml
 
 echo Syncing...
 repo sync -j4 -d
@@ -109,21 +109,21 @@ rm -f $OUT/update*.zip*
 
 UNAME=$(uname)
 
-#if [ "$RELEASE_TYPE" = "CM_NIGHTLY" ]
-#then
-#  if [ "$REPO_BRANCH" = "gingerbread" ]
-#  then
-#    export CYANOGEN_NIGHTLY=true
-#  else
-#    export CM_NIGHTLY=true
-#  fi
-#elif [ "$RELEASE_TYPE" = "CM_SNAPSHOT" ]
-#then
-#  export CM_SNAPSHOT=true
-#elif [ "$RELEASE_TYPE" = "CM_RELEASE" ]
-#then
-#  export CM_RELEASE=true
-#fi
+# if [ "$RELEASE_TYPE" = "CM_NIGHTLY" ]
+# then
+#   if [ "$REPO_BRANCH" = "gingerbread" ]
+#   then
+#     export CYANOGEN_NIGHTLY=true
+#   else
+#     export CM_NIGHTLY=true
+#   fi
+# elif [ "$RELEASE_TYPE" = "CM_SNAPSHOT" ]
+# then
+#   export CM_SNAPSHOT=true
+# elif [ "$RELEASE_TYPE" = "CM_RELEASE" ]
+# then
+#   export CM_RELEASE=true
+# fi
 
 if [ ! "$(ccache -s|grep -E 'max cache size'|awk '{print $4}')" = "5.0" ]
 then
