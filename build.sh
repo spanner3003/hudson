@@ -96,9 +96,9 @@ repo sync -j8 -d
 check_result repo sync failed.
 echo Sync complete.
 
-if [ -f $WORKSPACE/hudson/$REPO_BRANCH-setup.sh ]
+if [ -f $WORKSPACE/hudson/ics-setup.sh ]
 then
-  $WORKSPACE/hudson/$REPO_BRANCH-setup.sh
+  $WORKSPACE/hudson/ics-setup.sh
 fi
 
 . build/envsetup.sh
