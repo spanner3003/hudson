@@ -92,7 +92,7 @@ fi
 # cp $WORKSPACE/hudson/$REPO_BRANCH.xml .repo/local_manifest.xml
 
 echo Syncing...
-repo sync -j4 -d
+repo sync -j8 -d
 check_result repo sync failed.
 echo Sync complete.
 
